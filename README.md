@@ -21,6 +21,7 @@
   <img src="https://img.shields.io/badge/Claude-D97757?style=for-the-badge&logo=anthropic&logoColor=white" alt="Claude" />
   <img src="https://img.shields.io/badge/GitHub_Copilot-000000?style=for-the-badge&logo=githubcopilot&logoColor=white" alt="GitHub Copilot" />
   <img src="https://img.shields.io/badge/Gemini-4285F4?style=for-the-badge&logo=googlegemini&logoColor=white" alt="Gemini" />
+  <img src="https://img.shields.io/badge/Grok-000000?style=for-the-badge&logo=x&logoColor=white" alt="Grok" />
   <img src="https://img.shields.io/badge/OpenClaw-0F172A?style=for-the-badge" alt="OpenClaw" />
   <img src="https://img.shields.io/badge/Hermes_Agent-6D28D9?style=for-the-badge" alt="Hermes Agent" />
   <img src="https://img.shields.io/badge/AI_Agent-0891B2?style=for-the-badge" alt="AI Agent" />
@@ -46,7 +47,8 @@ I build practical systems for commerce, CRM, quotation workflows, automation, an
 Main project    mesati.com
 Direction       Emotional delivery platform for flowers, wreaths, and life-event services
 AI workflow     Hermes Agent as the main SDLC agent workflow
-Agent stack     Hermes Agent, OpenClaw, ChatGPT, Claude, Gemini, GitHub Copilot
+Agent stack     Hermes Agent, OpenClaw, ChatGPT, Claude, Gemini, Grok, GitHub Copilot
 Achievement     Completed an SDLC flow using Hermes Agent
 Focus area      Product strategy, landing page architecture, service design, and automation
 Location        Bangkok, Thailand
+```
