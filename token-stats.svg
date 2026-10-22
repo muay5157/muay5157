@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="234" viewBox="0 0 420 234" role="img" aria-labelledby="t d">
+  <title id="t">AI Token Usage</title>
+  <desc id="d">Grok Bot: n/a; Grok Build: n/a; Cursor: n/a. Tokens, last 30 days. Updated 2026-10-22 (UTC+7).</desc>
+  <style>
+    .bg { fill: #ffffff; stroke: #d0d7de; }
+    .title { fill: #1f2328; font: 600 18px -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, 'DejaVu Sans', sans-serif; }
+    .sub { fill: #656d76; font: 400 12px -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, 'DejaVu Sans', sans-serif; }
+    .label { fill: #1f2328; font: 500 14px -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, 'DejaVu Sans', sans-serif; }
+    .value { fill: #0969da; font: 600 15px -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, 'DejaVu Sans', sans-serif; font-variant-numeric: tabular-nums; }
+    .value.na { fill: #8c959f; font-weight: 500; }
+    .sep { stroke: #eaeef2; stroke-width: 1; }
+    .dot-ok { fill: #1a7f37; }
+    .dot-na { fill: #afb8c1; }
+    .foot { fill: #656d76; font: 400 11px -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, 'DejaVu Sans', sans-serif; }
+    @media (prefers-color-scheme: dark) {
+      .bg { fill: #0d1117; stroke: #30363d; }
+      .title { fill: #e6edf3; }
+      .sub, .foot { fill: #8d96a0; }
+      .label { fill: #e6edf3; }
+      .value { fill: #58a6ff; }
+      .value.na { fill: #6e7681; }
+      .sep { stroke: #21262d; }
+      .dot-ok { fill: #3fb950; }
+      .dot-na { fill: #484f58; }
+    }
+  </style>
+  <rect class="bg" x="0.5" y="0.5" width="419" height="233" rx="10"/>
+  <text class="title" x="24" y="36">AI Token Usage</text>
+  <text class="sub" x="24" y="56">tokens · last 30 days</text>
+  <g transform="translate(0 74)">
+    
+    <circle class="dot dot-na" cx="30" cy="20" r="4"/>
+    <text class="label" x="44" y="25">Grok Bot</text>
+    <text class="value na" x="396" y="25" text-anchor="end">n/a</text>
+  </g>
+  <g transform="translate(0 114)">
+    <line class="sep" x1="24" y1="0" x2="396" y2="0"/>
+    <circle class="dot dot-na" cx="30" cy="20" r="4"/>
+    <text class="label" x="44" y="25">Grok Build</text>
+    <text class="value na" x="396" y="25" text-anchor="end">n/a</text>
+  </g>
+  <g transform="translate(0 154)">
+    <line class="sep" x1="24" y1="0" x2="396" y2="0"/>
+    <circle class="dot dot-na" cx="30" cy="20" r="4"/>
+    <text class="label" x="44" y="25">Cursor</text>
+    <text class="value na" x="396" y="25" text-anchor="end">n/a</text>
+  </g>
+  <text class="foot" x="24" y="218">updated 2026-10-22 (UTC+7) · n/a = no official API</text>
+</svg>

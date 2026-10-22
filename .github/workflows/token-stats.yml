@@ -1,0 +1,56 @@
+# Daily AI token usage card -> orphan branch `stats` (main is never modified).
+name: token-stats
+
+on:
+  schedule:
+    - cron: "0 19 * * *" # 19:00 UTC = 02:00 Asia/Bangkok (UTC+7)
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: token-stats
+  cancel-in-progress: false
+
+jobs:
+  render:
+    # Only in the owner repo (never in forks, never on pull_request events).
+    if: github.repository == 'muay5157/muay5157' && github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout (shallow)
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Set up Node 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Render token-stats.svg
+        env:
+          # Optional. Empty/missing -> Cursor row shows n/a. Never echoed.
+          CURSOR_ADMIN_API_KEY: ${{ secrets.CURSOR_ADMIN_API_KEY }}
+          CURSOR_USER_EMAIL: ${{ secrets.CURSOR_USER_EMAIL }}
+        run: node scripts/token-stats.mjs --out "$RUNNER_TEMP/token-stats.svg"
+
+      - name: Publish to orphan branch `stats` (force, single commit)
+        env:
+          SVG: ${{ runner.temp }}/token-stats.svg
+          WT: ${{ runner.temp }}/stats-worktree
+        run: |
+          set -euo pipefail
+          # Separate worktree so the main checkout is never touched.
+          git worktree add --detach "$WT" HEAD
+          cd "$WT"
+          git switch --orphan stats          # empty index + empty tree, no history
+          cp "$SVG" token-stats.svg
+          git add token-stats.svg
+          git -c user.name="github-actions[bot]" \
+              -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
+              commit -q -m "token stats $(TZ=Asia/Bangkok date +%F)"
+          # Uses the GITHUB_TOKEN credentials persisted by actions/checkout.
+          git push -q --force origin HEAD:refs/heads/stats
